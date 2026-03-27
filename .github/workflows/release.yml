@@ -1,0 +1,27 @@
+name: Auto Release Python Script
+
+on:
+  push:
+    tags:
+      - 'v*' # 只有推送 v 开头的版本号才会触发发布
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. 检出代码
+        uses: actions/checkout@v3
+
+      - name: 2. 将脚本打包成 zip (方便用户一键下载)
+        run: |
+          zip -r frida-ios-dump-pro.zip . -x "*.git*" -x ".github/*"
+
+      - name: 3. 自动创建 GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: frida-ios-dump-pro.zip # 把上面打包好的 zip 挂载到 Release 页面
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

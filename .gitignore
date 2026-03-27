@@ -1,0 +1,8 @@
+# 忽略 Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 忽略 Mac/Windows 系统隐藏文件
+.DS_Store
+Thumbs.db
