@@ -1,5 +1,5 @@
 frida-ios-dump (Pro / Refactored)
-基于 AloneMonkey 原版 frida-ios-dump 的深度重构版。
+基于 AloneMonkey 原版 frida-ios-dump 的深度重构版。(https://github.com/AloneMonkey/frida-ios-dump/)
 
 原版脚本是业内非常经典的 iOS 砸壳工具，但随着 Frida 迭代到 17.x（全面引入严格的 QuickJS 引擎）以及现代 iOS 越狱环境的演进，原版脚本在实际使用中经常会遇到“进度条卡死 0B”、“JS 语法报错崩溃”、“ObjC 环境未就绪”等各种水土不服的问题。
 
